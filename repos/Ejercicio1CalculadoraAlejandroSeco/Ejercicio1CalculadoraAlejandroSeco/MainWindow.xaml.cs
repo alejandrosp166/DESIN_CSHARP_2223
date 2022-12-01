@@ -39,7 +39,7 @@ namespace Ejercicio1CalculadoraAlejandroSeco
                     break;
                 case 3:
                     labelRes.Content = dividir(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-
+                    
                     break;
             }
         }
@@ -64,6 +64,7 @@ namespace Ejercicio1CalculadoraAlejandroSeco
 
         private string dividir(int n1, int n2)
         {
+            // Añadir que n1 no pueda ser mayor a n2
             if(n2 != 0)
             {
                 int division = n1 / n2;
