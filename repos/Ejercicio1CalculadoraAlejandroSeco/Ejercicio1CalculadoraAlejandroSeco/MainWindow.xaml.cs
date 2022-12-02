@@ -24,23 +24,29 @@ namespace Ejercicio1CalculadoraAlejandroSeco
 
         private void calcular_Click(object sender, RoutedEventArgs e)
         {
-            switch(0)
+            try
             {
-                case 0:
-                    labelRes.Content = sumar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-                    break;
-                case 1:
-                    labelRes.Content = restar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                switch (0)
+                {
+                    case 0:
+                        labelRes.Content = sumar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                        break;
+                    case 1:
+                        labelRes.Content = restar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
 
-                    break;
-                case 2:
-                    labelRes.Content = multiplicar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                        break;
+                    case 2:
+                        labelRes.Content = multiplicar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
 
-                    break;
-                case 3:
-                    labelRes.Content = dividir(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-                    
-                    break;
+                        break;
+                    case 3:
+                        labelRes.Content = dividir(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                        break;
+                }
+            }
+            catch
+            {
+
             }
         }
 
@@ -64,12 +70,12 @@ namespace Ejercicio1CalculadoraAlejandroSeco
 
         private string dividir(int n1, int n2)
         {
-            // Añadir que n1 no pueda ser mayor a n2
-            if(n2 != 0)
+            if (n2 != 0)
             {
                 int division = n1 / n2;
                 return Convert.ToString(division);
-            } else
+            }
+            else
             {
                 return "No puedes dividir por 0";
             }
