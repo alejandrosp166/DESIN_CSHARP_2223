@@ -5,19 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ejercicio1CalculadoraAlejandroSeco"
         mc:Ignorable="d"
-        Title="Calculadora Ejercicio 1 Alejandro Seco" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="n1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="n2" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <RadioButton Content="Sumar" HorizontalAlignment="Left" Margin="205,12,0,0" VerticalAlignment="Top" GroupName="operaciones"/>
-        <RadioButton Content="Dividir" HorizontalAlignment="Left" Margin="205,102,0,0" VerticalAlignment="Top" GroupName="operaciones"/>
-        <RadioButton Content="Multiplicar" HorizontalAlignment="Left" Margin="205,71,0,0" VerticalAlignment="Top" GroupName="operaciones"/>
-        <RadioButton Content="Restar" HorizontalAlignment="Left" Margin="205,40,0,0" VerticalAlignment="Top" GroupName="operaciones"/>
+        Title="Calculadora Ejercicio 1 Alejandro Seco" Height="224.547" Width="391.65">
+    <Grid Margin="0,0,2,4">
+        <TextBox x:Name="n1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="n1_TextChanged"/>
+        <TextBox x:Name="n2" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="n2_TextChanged"/>
+        <RadioButton x:Name="radioSuma" Content="Sumar" HorizontalAlignment="Left" Margin="205,12,0,0" VerticalAlignment="Top" GroupName="operaciones" Checked="estaPulsadoAlgunBoton_Checked"/>
+        <RadioButton x:Name="radioDividir" Content="Dividir" HorizontalAlignment="Left" Margin="205,102,0,0" VerticalAlignment="Top" GroupName="operaciones" Checked="estaPulsadoAlgunBoton_Checked"/>
+        <RadioButton x:Name="radioMulti" Content="Multiplicar" HorizontalAlignment="Left" Margin="205,71,0,0" VerticalAlignment="Top" GroupName="operaciones" Checked="estaPulsadoAlgunBoton_Checked"/>
+        <RadioButton x:Name="radioResta" Content="Restar" HorizontalAlignment="Left" Margin="205,40,0,0" VerticalAlignment="Top" GroupName="operaciones" Checked="estaPulsadoAlgunBoton_Checked"/>
         <Button x:Name="calcular" Content="Calcular" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" Click="calcular_Click"/>
-        <Button x:Name="salir" Content="Salir" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="salir_Copy" Content="Limpiar campos" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Solución -&gt; " HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.033,-0.263"/>
-        <Label x:Name="labelRes" Content="." HorizontalAlignment="Left" Margin="90,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,-0.307"/>
+        <Button x:Name="salir" Content="Salir" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="200" Click="salir_Click"/>
+        <Button x:Name="limpiar" Content="Limpiar campos" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Width="120" Click="limpiar_click"/>
+        <TextBox x:Name="textSol" HorizontalAlignment="Left" Height="20" Margin="10,124,0,0" TextWrapping="Wrap" Text="Solución" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
 
     </Grid>
 </Window>

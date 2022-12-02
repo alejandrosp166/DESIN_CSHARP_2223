@@ -26,27 +26,26 @@ namespace Ejercicio1CalculadoraAlejandroSeco
         {
             try
             {
-                switch (0)
+                if ((bool)radioSuma.IsChecked)
                 {
-                    case 0:
-                        labelRes.Content = sumar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-                        break;
-                    case 1:
-                        labelRes.Content = restar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-
-                        break;
-                    case 2:
-                        labelRes.Content = multiplicar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-
-                        break;
-                    case 3:
-                        labelRes.Content = dividir(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
-                        break;
+                    textSol.Text = sumar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                }
+                else if ((bool)radioResta.IsChecked)
+                {
+                    textSol.Text = restar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                }
+                else if ((bool)radioMulti.IsChecked)
+                {
+                    textSol.Text = multiplicar(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
+                }
+                else if ((bool)radioDividir.IsChecked)
+                {
+                    textSol.Text = dividir(Convert.ToInt32(n1.Text), Convert.ToInt32(n2.Text));
                 }
             }
-            catch
+            catch (Exception)
             {
-
+                textSol.Text = "Debes introducir un número válido";
             }
         }
 
@@ -78,6 +77,45 @@ namespace Ejercicio1CalculadoraAlejandroSeco
             else
             {
                 return "No puedes dividir por 0";
+            }
+        }
+
+        private void limpiar_click(object sender, RoutedEventArgs e)
+        {
+            n1.Text = "";
+            n2.Text = "";
+            textSol.Text = "";
+        }
+
+        private void salir_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void n1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            habilitarCalcular();
+        }
+
+        private void n2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            habilitarCalcular();
+        }
+
+        private void estaPulsadoAlgunBoton_Checked(object sender, RoutedEventArgs e)
+        {
+            habilitarCalcular();
+        }
+
+        private void habilitarCalcular()
+        {
+            if (((bool)radioSuma.IsChecked || (bool)radioResta.IsChecked || (bool)radioMulti.IsChecked || (bool)radioDividir.IsChecked) && n1.Text != "" && n2.Text != "")
+            {
+                calcular.IsEnabled = true;
+            }
+            else
+            {
+                calcular.IsEnabled = false;
             }
         }
     }
