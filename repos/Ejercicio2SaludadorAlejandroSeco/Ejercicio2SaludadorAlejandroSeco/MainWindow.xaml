@@ -1,0 +1,17 @@
+﻿<Window x:Class="Ejercicio2SaludadorAlejandroSeco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejercicio2SaludadorAlejandroSeco"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtNombre_TextChanged"/>
+        <Label x:Name="label1" Content="El cuadro de texto está vacío" Margin="10,33,400,374"/>
+        <Button x:Name="saludar" Content="Saludar" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="120" Click="saludar_Click"/>
+        <Button x:Name="listarSaludos" Content="Mostrar saludos" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.428,0.515" Width="120" Click="listarSaludos_Click"/>
+        <Button x:Name="reset" Content="Resetear Saludos" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="120" Click="reset_Click"/>
+
+    </Grid>
+</Window>
