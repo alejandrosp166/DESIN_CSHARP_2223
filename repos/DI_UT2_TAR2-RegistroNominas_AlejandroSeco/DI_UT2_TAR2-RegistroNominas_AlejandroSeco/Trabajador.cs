@@ -30,6 +30,15 @@ namespace DI_UT2_TAR2_RegistroNominas_AlejandroSeco
             this.puesto = puesto;
             this.sueldo = sueldo;
         }
+
+        public bool Equals(Trabajador t)
+        {
+            if (this.dni.Equals(t.dni))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 
     public enum Puesto
