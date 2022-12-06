@@ -33,11 +33,21 @@ namespace DI_UT2_TAR2_RegistroNominas_AlejandroSeco
 
         public bool Equals(Trabajador t)
         {
-            if (this.dni.Equals(t.dni))
+            // Comprueba si dos trabajadores son iguales (comparando el dni)
+            if(t != null)
             {
-                return true;
+                if (dni.Equals(t.dni))
+                {
+                    return true;
+                }
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            // Formatea la salida del trabajador
+            return "Nombre -> " + nombre + " sueldo -> " + sueldo.ToString();
         }
     }
 

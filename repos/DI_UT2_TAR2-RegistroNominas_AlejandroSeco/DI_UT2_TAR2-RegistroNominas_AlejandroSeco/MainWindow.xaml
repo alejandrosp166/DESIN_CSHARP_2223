@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DI_UT2_TAR2_RegistroNominas_AlejandroSeco"
         mc:Ignorable="d"
-        Title="MainWindow" Height="422" Width="800">
+        Title="MainWindow" Height="359" Width="678">
     <Grid Margin="0,0,0,1">
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="66,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtApellido1" HorizontalAlignment="Left" Margin="322,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -29,7 +29,7 @@
         <RadioButton x:Name="radioTecnico" Content="Técnico" HorizontalAlignment="Left" Margin="28,212,0,0" VerticalAlignment="Top" GroupName="puesto" Checked="radioTecnico_Checked"/>
         <Button x:Name="calcularNomina" Content="Calcular nómina" HorizontalAlignment="Left" Margin="18,240,0,0" VerticalAlignment="Top" Width="131" Click="calcularNomina_Click"/>
         <Button x:Name="limpiarForm" Content="Limpiar formulario" HorizontalAlignment="Left" Margin="18,265,0,0" VerticalAlignment="Top" Width="131" Click="limpiarForm_Click"/>
-        <Button x:Name="salir" Content="Salir" HorizontalAlignment="Left" Margin="695,371,0,0" VerticalAlignment="Top" Width="95" Click="salir_Click"/>
+        <Button x:Name="salir" Content="Salir" HorizontalAlignment="Left" Margin="461,290,0,0" VerticalAlignment="Top" Width="127" Click="salir_Click"/>
         <Button x:Name="registrarTrabajador" Content="Registrar Trabajador" HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Width="128" Click="registrarTrabajador_Click"/>
         <Button x:Name="listarTrabajador" Content="Listar Trabajadores" HorizontalAlignment="Left" Margin="460,265,0,0" VerticalAlignment="Top" Width="129" Click="listarTrabajador_Click"/>
         <RadioButton x:Name="radioMenos5" Content="menos de 5 años" HorizontalAlignment="Left" Margin="224,152,0,0" VerticalAlignment="Top" GroupName="aniosExp" Checked="radioMenos5_Checked" IsChecked="True"/>
