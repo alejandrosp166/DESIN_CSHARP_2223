@@ -1,0 +1,208 @@
+﻿<Window x:Class="DI_UT2_TAR2_FormCalculadora_AlejandroSeco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DI_UT2_TAR2_FormCalculadora_AlejandroSeco"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="500" Background="#FFDAD1D1">
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="25"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Text="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" BorderThickness="3" FontFamily="Consolas" FontSize="80"/>
+        <Button Content="." Grid.Row="5" Grid.Column="2" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="1" Grid.Row="4" Grid.Column="0" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="2" Grid.Row="4" Grid.Column="1" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="3" Grid.Row="4" Grid.Column="2" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="4" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="5" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="6" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="7" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="8" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="9" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="+" Grid.Row="4" Grid.Column="5" Grid.RowSpan="2" Margin="10" FontSize="40" FontFamily="Consolas" Background="#FF3EF508" BorderThickness="3" Visibility="Visible" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="=" Grid.Row="5" Grid.Column="4" Margin="10" FontSize="40" FontFamily="Consolas" Background="#FFECF706" BorderThickness="3" Visibility="Visible" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="-" Grid.Row="4" Grid.Column="4" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="/" Grid.Row="3" Grid.Column="4" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="*" Grid.Row="3" Grid.Column="5" Margin="10" FontSize="40" FontFamily="Consolas" BorderThickness="3" Visibility="Visible" Background="White" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="CE" Grid.Row="2" Grid.Column="4" Margin="10" FontSize="40" FontFamily="Consolas" Background="#FF1B29B8" BorderThickness="3" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="C" Grid.Row="2" Grid.Column="5" Margin="10" FontSize="40" FontFamily="Consolas" Background="#FFEC2B2B" BorderThickness="3" BorderBrush="Blue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>
