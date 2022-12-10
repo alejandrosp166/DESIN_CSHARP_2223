@@ -42,26 +42,22 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
 
         private void btnBuscarFoto_Click(object sender, RoutedEventArgs e)
         {
-            // Creamos el objeto fileDialog
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            // Lo mostramos por pantalla
-            fileDialog.ShowDialog();
-            // Almacenamos la ruta el archivo que ha elegido el usuario
-            string rutaArchivo = fileDialog.FileName;
-            if (rutaArchivo.EndsWith(".jpg") || rutaArchivo.EndsWith(".png") || rutaArchivo.EndsWith(".jpeg"))
-            {
-                // Cambiamos la imagen por la elegida por el usuario
-                imgUsuario.Source = new BitmapImage(new Uri(rutaArchivo));
-            } else
-            {
-                // Mostramos un mensaje de error en el caso de que el archivo elegido no sea una imagen
-                lblErrorImagen.Content = "El archivo elegido debe\nser una imagen\n(.jpg // .png // .jpeg)";
-            }
+            imgUsuario.Source = obtenerImagenFormulario();
         }
 
         private void btnListarUsuarios_Click(object sender, RoutedEventArgs e)
         {
-
+            // Si la lista tiene elementos
+            if(listaUsuarios.Count() > 0)
+            {
+                // Mostramos la nueva venatan
+                VentanaListarUsuarios nuevaVentana = new VentanaListarUsuarios(listaUsuarios);
+                nuevaVentana.Show();
+            } else
+            {
+                // Mostramos un mensaje al usuario
+                MessageBox.Show("La lista de usuarios está vacía");
+            }
         }
 
         private void btnSalirApp_Click(object sender, RoutedEventArgs e)
@@ -81,10 +77,31 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
             if (validarDatos(user, pass, date))
             {
                 // Devolvemos un objeto usuario
-                return new Usuario(user, pass, date);
+                return new Usuario(user, pass, date, (BitmapImage)imgUsuario.Source);
             }
             // Devolvemos null
             return null;
+        }
+
+        private BitmapImage obtenerImagenFormulario()
+        {
+            // Creamos el objeto fileDialog
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            // Lo mostramos por pantalla
+            fileDialog.ShowDialog();
+            // Almacenamos la ruta el archivo que ha elegido el usuario
+            string rutaArchivo = fileDialog.FileName;
+            if (rutaArchivo.EndsWith(".jpg") || rutaArchivo.EndsWith(".png") || rutaArchivo.EndsWith(".jpeg"))
+            {
+                // Cambiamos la imagen por la elegida por el usuario
+                return new BitmapImage(new Uri(rutaArchivo));
+            }
+            else
+            {
+                // Mostramos un mensaje de error en el caso de que el archivo elegido no sea una imagen
+                lblErrorImagen.Content = "El archivo elegido debe\nser una imagen\n(.jpg // .png // .jpeg)";
+                return null;
+            }
         }
 
         private bool validarDatos(string user, string pass, DateTime date)
@@ -96,26 +113,29 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
             if(user.Equals(""))
             {
                 // Mostramos mensaje de error en el label correspondiente
-                lblErrorNombre.Content = "El campo Nombre no puede estar vacío";
+                lblErrorNombre.Content = "El campo Nombre no\npuede estar vacío";
                 validado = false;
                 // Si la contraseña está vacía
-            } else if (pass.Equals(""))
-            {
-                // Mostramos mensaje de error en el label correspondiente
-                lblErrorPass.Content = "El campo Contraseña no puede estar vacío";
-                validado = false;
-                // Se valida la contraseña
-            } else if(regex.IsMatch(pass))
-            {
-                // Mostramos mensaje de error en el label
-                lblErrorPass.Content = "Mínimo 6 carácteres y máximo 12 debe contener una mayúscula una minúscula y un número";
-                validado = false;
-                // Se valida si el usuario es mayor de edad
-            } else if(date.AddYears(18) > DateTime.Today)
-            {
-                // Mostramos mensaje de error en el label fecha
-                lblErrorFecha.Content = "El usuario debe tener 18 años o más";
-                validado = false;
+                if (pass.Equals(""))
+                {
+                    // Mostramos mensaje de error en el label correspondiente
+                    lblErrorPass.Content = "El campo Contraseña\nno puede estar vacío";
+                    validado = false;
+                    // Se valida la contraseña según los condicionantes
+                    if (regex.IsMatch(pass))
+                    {
+                        // Mostramos mensaje de error en el label
+                        lblErrorPass.Content = "Mínimo 6 carácteres y máximo 12\ndebe contener una mayúscula\nuna minúscula y un número";
+                        validado = false;
+                        // Se valida si el usuario es mayor de edad
+                        if (date.AddYears(18) > DateTime.Today)
+                        {
+                            // Mostramos mensaje de error en el label fecha
+                            lblErrorFecha.Content = "El usuario debe\ntener 18 años o más";
+                            validado = false;
+                        }
+                    }
+                }
             }
             return validado;
         }
@@ -126,6 +146,14 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
             lblErrorImagen.Content = "";
             lblErrorNombre.Content = "";
             lblErrorPass.Content = "";
+        }
+
+        private void reiniciarFormulario()
+        {
+            txtNombre.Text = "";
+            txtPassword.Password = "";
+            imgUsuario.Source = null;
+            // Buscar como reiniciar la fecha
         }
     }
 }

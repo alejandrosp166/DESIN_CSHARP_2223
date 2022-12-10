@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,14 +14,18 @@ using System.Windows.Shapes;
 
 namespace DI_UT2_TAR4_FichaRegistroUsuario
 {
-    /// <summary>
-    /// Lógica de interacción para VentanaListarUsuarios.xaml
-    /// </summary>
     public partial class VentanaListarUsuarios : Window
     {
-        public VentanaListarUsuarios()
+        public VentanaListarUsuarios(List<Usuario> l)
         {
             InitializeComponent();
+            cargarUsuariosLista(l);
+        }
+
+        private void cargarUsuariosLista(List<Usuario> listaUsuarios)
+        {
+            listaUsuarios = listaUsuarios.OrderByDescending(x => x.fechaNacimiento).ToList();
+            // Queda caragarlo en el listBox
         }
     }
 }
