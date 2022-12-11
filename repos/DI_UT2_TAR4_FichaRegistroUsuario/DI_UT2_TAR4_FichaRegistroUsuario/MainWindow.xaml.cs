@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace DI_UT2_TAR4_FichaRegistroUsuario
 {
+    // ALEJANDRO SECO PINEDA 2ºDAM
     public partial class MainWindow : Window
     {
         List<Usuario> listaUsuarios;

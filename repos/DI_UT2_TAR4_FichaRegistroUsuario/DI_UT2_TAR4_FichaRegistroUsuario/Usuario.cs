@@ -5,6 +5,7 @@ using System.Windows.Media.Imaging;
 
 namespace DI_UT2_TAR4_FichaRegistroUsuario
 {
+    // ALEJANDRO SECO PINEDA 2ºDAM
     public class Usuario
     {
         public string nombre { get; set; }
