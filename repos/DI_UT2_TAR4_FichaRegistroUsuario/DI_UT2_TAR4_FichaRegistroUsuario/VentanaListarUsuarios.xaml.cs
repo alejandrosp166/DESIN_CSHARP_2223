@@ -24,8 +24,10 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
 
         private void cargarUsuariosLista(List<Usuario> listaUsuarios)
         {
-            listaUsuarios = listaUsuarios.OrderByDescending(x => x.fechaNacimiento).ToList();
-            // Queda caragarlo en el listBox
+            // Ordenamos la lista de mayor a menor
+            listaUsuarios = listaUsuarios.OrderBy(x => x.fechaNacimiento).ToList();
+            // Linkeamos la lista con la lista que contiene a los usuarios
+            listBoxUsers.ItemsSource = listaUsuarios;
         }
     }
 }

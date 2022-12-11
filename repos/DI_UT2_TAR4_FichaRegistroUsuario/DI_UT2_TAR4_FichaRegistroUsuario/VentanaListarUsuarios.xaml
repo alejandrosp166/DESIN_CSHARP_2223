@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="VentanaListarUsuarios" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblListaUsuarios" Grid.Row="0" Content="LISTA DE USUARIOS DE LA APLICACIÓN" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"></Label>
+        <ListBox x:Name="listBoxUsers" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding avatarUsuario}"></Image>
+                        <TextBlock Grid.Column="1" Text="{Binding nombre}" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="     Fecha nacimiento: " VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="3" Text="{Binding fechaNacimiento}" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

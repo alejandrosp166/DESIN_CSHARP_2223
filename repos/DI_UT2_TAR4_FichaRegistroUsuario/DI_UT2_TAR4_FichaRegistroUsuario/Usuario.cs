@@ -11,7 +11,7 @@ namespace DI_UT2_TAR4_FichaRegistroUsuario
         public string password { get; set; }
         public DateTime fechaNacimiento { get; set; }
         // Esta propiedad guarda la imagen de avatar del usuario, la inicializamos por defecto a la imagen de avatar predeterminada
-        public BitmapImage avatarUsuario { get; set; } = new BitmapImage(new Uri(System.AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\netcoreapp3.1\\", "\\res\\avatar.png")));
+        public BitmapImage avatarUsuario { get; set; } = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\netcoreapp3.1\\", "\\res\\avatar.png")));
         public Usuario(string nombre, string password, DateTime fechaNacimiento, BitmapImage avatarUsuario)
         {
             this.nombre = nombre;
